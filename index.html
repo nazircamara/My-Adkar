@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-tag">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0f0e0d">
+    <title>أذكاري | Athkar App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Vazirmatn:wght@300;500;800&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div id="progress-container" class="progress-container hidden">
+            <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        
+        <div class="nav-content">
+            <div class="logo" onclick="showMainMenu()">
+                <span class="logo-emoji">📖</span>
+                <span class="logo-text" data-i18n="logo">أذكاري</span>
+            </div>
+
+                <div class="header-actions"></div>
+        </div>
+        
+        <nav class="sub-nav">
+            <button class="sub-nav-item" onclick="loadAthkar('morning')" data-i18n="morning">الصباح</button>
+            <button class="sub-nav-item" onclick="loadAthkar('evening')" data-i18n="evening">المساء</button>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 id="page-title" class="hero-title" data-i18n="main_title">أذكاري اليومية</h1>
+
+        <main id="main-menu" class="category-grid">
+            <div class="card category-card" onclick="loadAthkar('morning')">
+                <div class="card-content">
+                    <span class="icon">☀️</span>
+                    <h2>أذكار الصباح</h2>
+                </div>
+            </div>
+
+            <div class="card category-card" onclick="loadAthkar('evening')">
+                <div class="card-content">
+                    <span class="icon">🌙</span>
+                    <h2>أذكار المساء</h2>
+                </div>
+            </div>
+        </main>
+
+        <section id="athkar-list" class="athkar-list hidden"></section>
+    </div>
+
+    <footer class="app-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-emoji">📖</span>
+                <span class="logo-text" data-i18n="logo">أذكاري</span>
+            </div>
+            
+            <p class="footer-tagline" data-i18n="footer_text">
+                أذكار الصباح والمساء هي حصن المسلم اليومي، داوم عليها لتنعم براحة البال والطمأنينة.
+            </p>
+
+            <div class="footer-links">
+                <button class="footer-link-btn" onclick="loadAthkar('morning')" data-i18n="morning">الصباح</button>
+                <button class="footer-link-btn" onclick="loadAthkar('evening')" data-i18n="evening">المساء</button>
+            </div>
+
+            <div class="copyright">
+                &copy; 2026 <span data-i18n="logo">أذكاري</span>. جميع الحقوق محفوظة.
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
